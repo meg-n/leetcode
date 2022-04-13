@@ -29,7 +29,6 @@ class Solution {
         while(!stack.isEmpty()){
             int current = stack.pop();
             if(!seenSet.contains(current)){
-                System.out.print(current + " ");
                 if(current==destination) return true;
                 seenSet.add(current);
                 for(Integer i : map.get(current)){
