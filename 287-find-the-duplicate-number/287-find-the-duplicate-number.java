@@ -5,6 +5,7 @@ class Solution {
             if(!numSet.add(nums[i])){
                 return nums[i];
             }
+            numSet.add(nums[i]);
         }
         return -1;
     }
