@@ -12,9 +12,7 @@ class Solution {
                 bCount = 0;
                 cCount = 0;
             } else if((b>=c && b>=a && bCount != 2) || (aCount == 2 && b>0) || (cCount == 2&& b>0)){
-                System.out.print("in b");
-                System.out.print("b count" + bCount);                                               System.out.print("b in" + b);
-                sb.append('b');
+                 sb.append('b');
                 bCount++;
                 b--;
                 cCount = 0;
@@ -25,7 +23,6 @@ class Solution {
                 c--;
                 aCount = 0;
                 bCount = 0;
-                System.out.print(cCount);
             }
         }
     return sb.toString();
