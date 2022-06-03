@@ -22,7 +22,6 @@ class Solution {
         while(!queue.isEmpty()){
             List<Integer> list = new ArrayList<>();
             int l = queue.size();
-            System.out.print("Queue zise" + queue.size() + "\n");
             for(int i = 0; i< l; i++){
             if(queue.peek().left!=null) queue.offer(queue.peek().left);
             if(queue.peek().right != null) queue.offer(queue.peek().right);
