@@ -10,7 +10,7 @@
  */
 class Solution {
     //O(n)
-    public ListNode removeNthFromEnd(ListNode head, int n) {
+    public ListNode removeNthFromEnd8(ListNode head, int n) {
 
         ListNode fast = head;
         ListNode slow = head;
@@ -26,4 +26,23 @@ class Solution {
         slow.next = slow.next.next;
         return head;
     }
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode fast = head;
+        ListNode slow = head;
+        
+        for(int i = 0; i< n;i++){
+            fast = fast.next;
+        }
+        // case where you are removing the head.
+        if(fast ==null) return head.next; 
+        
+        while(fast.next!= null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return head;
+    }
+    
+
 }
