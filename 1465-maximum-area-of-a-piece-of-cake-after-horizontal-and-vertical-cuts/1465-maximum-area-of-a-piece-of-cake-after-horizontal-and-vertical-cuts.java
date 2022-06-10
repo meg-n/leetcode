@@ -7,11 +7,12 @@ class Solution {
     }
     public long getMax(int[] heights, int h){
         Arrays.sort(heights);
-        int max = Math.max(heights[0] - 0, h-heights[heights.length-1]);
-        for(int i = 1; i< heights.length;i++){
-            int diff = heights[i] - heights[i-1];
-            max = Math.max(max,diff);
-        }
-        return max;
+	    int len = 0, st = 0;
+	    for (int i : heights) {
+		    len = Math.max(i - st, len);
+		    st = i;
+	    }
+	    len = Math.max(len, h - st);
+        return len;
     }
 }
