@@ -42,7 +42,7 @@ class Solution {
         }
         return u;
     }
-    public Node cloneGraph(Node node) {
+    public Node cloneGraphDFS(Node node) {
         if(node == null) return node;
         if(map.containsKey(node)) return map.get(node);
         
@@ -53,5 +53,25 @@ class Solution {
             clone.neighbors.add(cloneGraph(n));
         }
         return clone;
+    }
+    public Node cloneGraph(Node node) {
+        if(node==null) return node;
+        HashMap<Node, Node> visited = new HashMap<>();
+        
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(node);
+        visited.put(node, new Node(node.val, new ArrayList()));
+        
+        while(!queue.isEmpty()){
+            Node current = queue.poll();
+            for(Node n : current.neighbors){
+                if(!visited.containsKey(n)){
+                    visited.put(n, new Node(n.val, new ArrayList()));
+                    queue.offer(n);
+                }
+                visited.get(current).neighbors.add(visited.get(n));
+            }
+        }
+        return visited.get(node);
     }
 }
