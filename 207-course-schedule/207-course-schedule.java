@@ -21,7 +21,6 @@ class Solution {
     private static boolean dfs(Map<Integer, List<Integer>> map, Set<Integer> set, int course){
         if(set.contains(course)) return false;
         if(map.containsKey(course) && map.get(course).isEmpty()) return true;
-        System.out.print("course " + course);
         set.add(course);    
         for(Integer pre : map.get(course)){
             if(!dfs(map,set,pre)) return false;
