@@ -2,7 +2,7 @@ class KthLargest {
     Queue<Integer> q;
     int k;
     public KthLargest(int k, int[] nums) {
-        q = new PriorityQueue<>((o1,o2)-> o1-o2);
+        q = new PriorityQueue<>();
         for(int i = 0;i<nums.length;i++){
             q.add(nums[i]);
         }
