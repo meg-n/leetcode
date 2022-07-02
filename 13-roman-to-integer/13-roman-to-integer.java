@@ -15,7 +15,6 @@ class Solution {
                 num += map.get(c[i+1]) - map.get(c[i]);
                 i = i+2;
             } else {
-                System.out.println(map.get(c[i])+" " +i);
                 num += map.get(c[i]);
                 i = i+1;
             } 
