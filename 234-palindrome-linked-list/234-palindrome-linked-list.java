@@ -10,6 +10,8 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
+        if(head == null)
+            return false;
         ListNode temp = head;
         Deque<Integer> stack = new ArrayDeque();
         while(temp!= null){
