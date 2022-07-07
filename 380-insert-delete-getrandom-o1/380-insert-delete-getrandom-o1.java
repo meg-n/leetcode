@@ -12,7 +12,7 @@ class RandomizedSet {
             }
 
         map.put(val, list.size());
-        list.add(list.size(),val);
+        list.add(val);
 
         return true;
     }
