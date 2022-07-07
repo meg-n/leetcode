@@ -37,9 +37,7 @@ class Solution {
         return amt > 1000;
     }
     public boolean checkTime(Transaction t, List<Transaction> list){
-        System.out.println(list.size());
         for(Transaction h : list){
-            System.out.println(h.time);
             if(Math.abs(t.time - h.time)<=60 && !t.city.equals(h.city))
                 return true;
         }      
