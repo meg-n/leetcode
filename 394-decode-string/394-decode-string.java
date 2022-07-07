@@ -11,19 +11,19 @@ class Solution {
                 while(Character.isDigit(cArr[i])){
                     number= (number*10)  + (cArr[i++]-'0');
                 }
-            } else if(cArr[i] == '['){
                 nq.push(number);
+                number =0;
+            } else if(cArr[i] == '['){
                 cq.push(current.toString());
-                number = 0;
                 current = new StringBuilder();
                 i++;
             } else if(cArr[i] == ']'){
-                StringBuilder decodedString  = new StringBuilder(cq.pop());
-                // decode currentK[currentString] by appending currentString k times
-                for (int currentK = nq.pop(); currentK > 0; currentK--) {
-                    decodedString.append(current);
+                StringBuilder temp = new StringBuilder(cq.pop());
+                int c = nq.pop();
+                for(int j =0;j<c;j++){
+                    temp.append(current);
                 }
-                current = decodedString;
+                current = temp;
                 i++;
             } else{
                 while(i< cArr.length && Character.isLetter(cArr[i])){
