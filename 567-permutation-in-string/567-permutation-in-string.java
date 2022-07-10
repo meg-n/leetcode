@@ -3,14 +3,19 @@ class Solution {
         if(s1.length() > s2.length()) return false;
         if(s1.equals(s2)) return true;
         char[] c = s1.toCharArray();
-        Arrays.sort(c);
+        int[] cmap = new int[26];
+        for(Character c3 : s1.toCharArray()){
+            cmap[c3-'a']++;
+        }
         
         for(int r = 0; r< s2.length() -1;r++){
             if(r+s1.length()> s2.length()) break;
             String s = s2.substring(r, r + s1.length());
-            char[] c1 = s.toCharArray();
-            Arrays.sort(c1);
-            if ( Arrays.equals(c,c1))return true;
+            int[] c1Map = new int[26];
+            for(Character c4 : s.toCharArray()){
+                c1Map[c4-'a']++;
+            }
+            if ( Arrays.equals(cmap,c1Map))return true;
         }
 
         return false;
